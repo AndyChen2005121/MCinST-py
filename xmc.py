@@ -16,28 +16,57 @@
 
 # "MCinST is not a script", remastered in Python
 # by pCloudsp
-# For Debian 8+/Ubuntu 16.04+/CentOS 7+/Others Linux & Windows 7+ & MacOS 10.7.3+
+# For Linux & Windows 7+ & MacOS 10.9+ & (Possibly Android?) in case you can get jre running
 
-from os import system
+# Import modules and init work
+import os
+import sys
+import platform
+import gettext
+_ = gettext.gettext
+CurrOS = platform.system()
+CurrPath = sys.path[0]
+os.chdir(CurrPath)
+ver = "dev"
+
+# from lang_en import lang
+# lang()
+# lang = input("Select language and press [Enter]:\
+# \n请选择语言并按回车：\
+# \n1. English\
+# \n2. 简体中文")
+# if lang == 1:
+# 	from lang_en import lang
+# elif lang == 2:
+# 	print("暂不支持中文")
+# 	# from lang_en import lang
+# else:
+# 	print("Please Re-Enter the right choice / 请重新输入选择")
+# 	input("Press [Enter] to continue... / 请按回车键继续...")
+# 	init()
+
+
 
 def main():
-	print("")
+	print(Greet)
+	print(MainMenu)
+
+def firsttime():
+	print(InstMenu)
+# def inst():
+# 	print()
 
 def init():
-	print("Select language and press [Enter]:\
-	\n请选择语言并按回车：\
-	\n1. English\
-	\n2. 简体中文")
-	
-	lang = input()
-	if lang == 1:
-		from lang_en import lang
-	elif lang == 2:
-		print("暂不支持中文")
+	if os.path.exists("~/MCinST-py/default.conf"):
+		main()
 	else:
-		print("Please Re-Enter the right choice / 请重新输入选择")
-		input("Press [Enter] to continue... / 请按回车键继续...")
-		init()
+		inst()
 
-	
+def cl():
+	if CurrOS == 'Windows':
+		_ = os.system('cls')
+	elif CurrOS == 'Linux' or CurrOS == 'Darwin':
+		_ = os.system('clear')
+
+
 init()
