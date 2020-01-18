@@ -56,6 +56,8 @@ def firsttime():
 	print(InstMenu)
 # def inst():
 # 	print()
+def instdep():
+	# package manager info.
 
 def init():
 	if os.path.exists("~/MCinST-py/default.conf"):
@@ -66,8 +68,7 @@ def init():
 def cl():
 	if CurrOS == 'Windows':
 		_ = os.system('cls')
-	elif CurrOS == 'Linux' or CurrOS == 'Darwin':
+	else:
 		_ = os.system('clear')
-
 
 init()
