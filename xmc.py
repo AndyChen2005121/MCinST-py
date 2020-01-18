@@ -29,6 +29,7 @@ CurrPath = sys.path[0]
 os.chdir(CurrPath)
 ver = "dev"
 
+dependencies = ["screen", "tar"]
 # from lang_en import lang
 # lang()
 # lang = input("Select language and press [Enter]:\
